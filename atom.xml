@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://my.com/"/>
-  <updated>2019-10-26T01:09:19.609Z</updated>
+  <updated>2019-10-26T01:10:15.332Z</updated>
   <id>http://my.com/</id>
   
   <author>
@@ -20,23 +20,18 @@
     <title>Flutter基础</title>
     <link href="http://my.com/2019/10/26/Flutter%E5%9F%BA%E7%A1%80/"/>
     <id>http://my.com/2019/10/26/Flutter基础/</id>
-    <published>2019-10-26T00:34:01.791Z</published>
-    <updated>2019-10-26T01:09:19.609Z</updated>
-    
-    <content type="html"><![CDATA[<hr><hr><p>title: Flutter基础<br>date: 2019-10-26 08:34:01<br>comments: true #是否可评论<br>toc: true #是否显示文章目录<br>categories: “云服务器” #分类<br>tags:   #标签</p><ul><li>Flutter</li></ul><hr>]]></content>
+    <published>2019-10-26T00:34:01.000Z</published>
+    <updated>2019-10-26T01:10:15.332Z</updated>
     
     <summary type="html">
-    
-      
-      
-        &lt;hr&gt;
-&lt;hr&gt;
-&lt;p&gt;title: Flutter基础&lt;br&gt;date: 2019-10-26 08:34:01&lt;br&gt;comments: true #是否可评论&lt;br&gt;toc: true #是否显示文章目录&lt;br&gt;categories: “云服务器” #分类&lt;br&gt;tags
-      
     
     </summary>
     
     
+      <category term="云服务器" scheme="http://my.com/category/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="Flutter" scheme="http://my.com/tags/Flutter/"/>
     
   </entry>
   
