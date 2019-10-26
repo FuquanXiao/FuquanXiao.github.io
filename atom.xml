@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://my.com/"/>
-  <updated>2019-10-26T01:10:15.332Z</updated>
+  <updated>2019-10-26T01:23:18.806Z</updated>
   <id>http://my.com/</id>
   
   <author>
@@ -21,17 +21,17 @@
     <link href="http://my.com/2019/10/26/Flutter%E5%9F%BA%E7%A1%80/"/>
     <id>http://my.com/2019/10/26/Flutter基础/</id>
     <published>2019-10-26T00:34:01.000Z</published>
-    <updated>2019-10-26T01:10:15.332Z</updated>
+    <updated>2019-10-26T01:23:18.806Z</updated>
     
     <summary type="html">
     
     </summary>
     
     
-      <category term="云服务器" scheme="http://my.com/categories/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="Flutter200" scheme="http://my.com/categories/Flutter200/"/>
     
     
-      <category term="Flutter" scheme="http://my.com/tags/Flutter/"/>
+      <category term="Flutter100" scheme="http://my.com/tags/Flutter100/"/>
     
   </entry>
   
