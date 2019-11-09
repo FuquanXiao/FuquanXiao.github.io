@@ -17,18 +17,18 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>文章分类 </title>
-  <meta name="description" content="当一天和尚敲一天钟">
-<meta property="og:type" content="website">
-<meta property="og:title" content="文章分类">
-<meta property="og:url" content="http:&#x2F;&#x2F;my.com&#x2F;categories&#x2F;index.html">
+  <title>Flutter/Flutter 基本语法 </title>
+  <meta name="description" content="Final and const如果你以后不打算修改一个变量，使用 final 或者 const。 一个 final 变量只能赋值一次；一个 const 变量是编译时常量。 （Const 变量同时也是 final 变量。） 顶级的 final 变量或者类中的 final 变量在 第一次使用的时候初始化。 注意： 实例变量可以为 final 但是不能是 const 。 const 变量为编译时常量。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter&#x2F;Flutter 基本语法">
+<meta property="og:url" content="http:&#x2F;&#x2F;my.com&#x2F;2019&#x2F;11&#x2F;06&#x2F;Flutter&#x2F;Flutter%20%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="傻瓜|无情">
-<meta property="og:description" content="当一天和尚敲一天钟">
+<meta property="og:description" content="Final and const如果你以后不打算修改一个变量，使用 final 或者 const。 一个 final 变量只能赋值一次；一个 const 变量是编译时常量。 （Const 变量同时也是 final 变量。） 顶级的 final 变量或者类中的 final 变量在 第一次使用的时候初始化。 注意： 实例变量可以为 final 但是不能是 const 。 const 变量为编译时常量。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-29T15:48:08.546Z">
+<meta property="og:updated_time" content="2019-11-05T16:14:14.115Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://my.com/categories/index.html">
+  <link rel="canonical" href="http://my.com/2019/11/06/Flutter/Flutter%20%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/index.html">
   
     <link rel="alternate" href="/atom.xml" title="傻瓜|无情" type="application/atom+xml">
   
@@ -267,14 +267,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="page-" class="article article-type-page" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Flutter/Flutter 基本语法" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      文章分类
+      Flutter/Flutter 基本语法
     </h1>
   
 
@@ -282,8 +282,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/categories/index.html" class="article-date">
-	  <time datetime="2019-10-26T00:32:28.000Z" itemprop="datePublished">2019-10-26</time>
+	<a href="/2019/11/06/Flutter/Flutter%20%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="article-date">
+	  <time datetime="2019-11-05T16:05:00.890Z" itemprop="datePublished">2019-11-06</time>
 	</a>
 </span>
         
@@ -291,13 +291,49 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/categories/index.html#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/11/06/Flutter/Flutter%20%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        
+        <h3 id="Final-and-const"><a href="#Final-and-const" class="headerlink" title="Final and const"></a>Final and const</h3><p>如果你以后不打算修改一个变量，使用 <code>final</code> 或者 <code>const</code>。 一个 final 变量只能赋值一次；一个 const 变量是编译时常量。 （Const 变量同时也是 final 变量。） 顶级的 final 变量或者类中的 final 变量在 第一次使用的时候初始化。</p>
+<p><strong><em>注意： 实例变量可以为 <code>final</code> 但是不能是 <code>const</code> 。</em></strong></p>
+<p><code>const</code> 变量为编译时常量。 如果 const 变量在类中，请定义为 <code>static const</code>。 可以直接定义 const 和其值，也 可以定义一个 const 变量使用其他 const 变量的值来初始化其值。</p>
+<p><code>const</code> 关键字不仅仅只用来定义常量。 有可以用来创建不变的值， 还能定义构造函数为 const 类型的，这种类型 的构造函数创建的对象是不可改变的。任何变量都可以有一个不变的值。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Note: [] creates an empty list.</span></span><br><span class="line"><span class="comment">// const [] creates an empty, immutable list (EIA).</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">const</span> [];   <span class="comment">// foo is currently an EIA.</span></span><br><span class="line"><span class="keyword">final</span> bar = <span class="keyword">const</span> []; <span class="comment">// bar will always be an EIA.</span></span><br><span class="line"><span class="keyword">const</span> baz = <span class="keyword">const</span> []; <span class="comment">// baz is a compile-time constant EIA.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// You can change the value of a non-final, non-const variable,</span></span><br><span class="line"><span class="comment">// even if it used to have a const value.</span></span><br><span class="line">foo = [];</span><br><span class="line"></span><br><span class="line"><span class="comment">// You can't change the value of a final or const variable.</span></span><br><span class="line"><span class="comment">// bar = []; // Unhandled exception.</span></span><br><span class="line"><span class="comment">// baz = []; // Unhandled exception.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Built-in-types-内置的类型"><a href="#Built-in-types-内置的类型" class="headerlink" title="Built-in types(内置的类型)"></a>Built-in types(内置的类型)</h3><p>Dart 内置支持下面这些类型：</p>
+<ul>
+<li>numbers</li>
+<li>strings</li>
+<li>booleans</li>
+<li>lists (也被称之为 <em>arrays</em>)</li>
+<li>maps</li>
+<li>runes (用于在字符串中表示 Unicode 字符)</li>
+<li>symbols</li>
+</ul>
+<h3 id="Numbers（数值）"><a href="#Numbers（数值）" class="headerlink" title="Numbers（数值）"></a>Numbers（数值）</h3><p>Dart 支持两种类型的数字：</p>
+<ul>
+<li><p><a href="https://api.dartlang.org/stable/dart-core/int-class.html" target="_blank" rel="noopener"><code>int</code></a></p>
+<p>整数值，其取值通常位于 -253 和 253 之间。</p>
+</li>
+<li><p><a href="https://api.dartlang.org/stable/dart-core/double-class.html" target="_blank" rel="noopener"><code>double</code></a></p>
+<p>64-bit (双精度) 浮点数，符合 IEEE 754 标准。</p>
+</li>
+</ul>
+<p><code>int</code> 和 <code>double</code> 都是 <a href="https://api.dartlang.org/stable/dart-core/num-class.html" target="_blank" rel="noopener"><code>num</code></a> 的子类</p>
+<h3 id="字符串和数字之间转换的方式："><a href="#字符串和数字之间转换的方式：" class="headerlink" title="字符串和数字之间转换的方式："></a>字符串和数字之间转换的方式：</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// String -&gt; int</span></span><br><span class="line"><span class="keyword">var</span> one = <span class="built_in">int</span>.parse(<span class="string">'1'</span>);</span><br><span class="line"><span class="keyword">assert</span>(one == <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// String -&gt; double</span></span><br><span class="line"><span class="keyword">var</span> onePointOne = <span class="built_in">double</span>.parse(<span class="string">'1.1'</span>);</span><br><span class="line"><span class="keyword">assert</span>(onePointOne == <span class="number">1.1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// int -&gt; String</span></span><br><span class="line"><span class="built_in">String</span> oneAsString = <span class="number">1.</span>toString();</span><br><span class="line"><span class="keyword">assert</span>(oneAsString == <span class="string">'1'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// double -&gt; String</span></span><br><span class="line"><span class="built_in">String</span> piAsString = <span class="number">3.14159</span>.toStringAsFixed(<span class="number">2</span>);</span><br><span class="line"><span class="keyword">assert</span>(piAsString == <span class="string">'3.14'</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id=""><a href="#" class="headerlink" title="=="></a><code>==</code></h3><p>操作符判断两个对象的内容是否一样。 如果两个字符串包含一样的字符编码序列， 则他们是相等的</p>
+<h3 id="三个单引号或者双引号也可以-创建多行字符串对象"><a href="#三个单引号或者双引号也可以-创建多行字符串对象" class="headerlink" title="三个单引号或者双引号也可以 创建多行字符串对象"></a>三个单引号或者双引号也可以 创建多行字符串对象</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s1 = <span class="string">'''</span></span><br><span class="line"><span class="string">You can create</span></span><br><span class="line"><span class="string">multi-line strings like this one.</span></span><br><span class="line"><span class="string">'''</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s2 = <span class="string">"""This is also a</span></span><br><span class="line"><span class="string">multi-line string."""</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="有疑问？那r到底是什么通过提供一个-r-前缀可以创建一个-“原始-raw”-字符串："><a href="#有疑问？那r到底是什么通过提供一个-r-前缀可以创建一个-“原始-raw”-字符串：" class="headerlink" title="有疑问？那r到底是什么通过提供一个 r 前缀可以创建一个 “原始 raw” 字符串："></a>有疑问？那r到底是什么通过提供一个 <code>r</code> 前缀可以创建一个 “原始 raw” 字符串：</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">r"In a raw string, even \n isn't special."</span>;</span><br></pre></td></tr></table></figure>
+
+<p>字符串字面量是编译时常量， 带有字符串插值的字符串定义，若干插值表达式引用的为编译时常量则其结果也是编译时常量</p>
+
       
     </div>
     <div class="article-footer">
@@ -306,7 +342,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>岁月不饶人，我亦未曾放过岁月</strong>
-      <!--<a href="http://my.com/categories/index.html" title="文章分类" target="_blank" rel="external">http://my.com/categories/index.html</a>-->
+      <!--<a href="http://my.com/2019/11/06/Flutter/Flutter%20%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="Flutter/Flutter 基本语法" target="_blank" rel="external">http://my.com/2019/11/06/Flutter/Flutter%20%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</a>-->
     </li>
     
     <li class="post-copyright-license">
@@ -349,6 +385,16 @@
 
   <nav class="bar bar-footer clearfix" data-stick-bottom>
   <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2019/11/05/%E5%85%B3%E9%94%AE%E5%AD%97/" title="关键字"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
   
   
   
@@ -397,6 +443,10 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 <script src="/js/insight.js"></script>
 
 
+
+
+
+   
 
 
 

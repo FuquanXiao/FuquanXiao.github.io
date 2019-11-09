@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://my.com/"/>
-  <updated>2019-10-29T15:38:35.129Z</updated>
+  <updated>2019-11-05T16:14:14.115Z</updated>
   <id>http://my.com/</id>
   
   <author>
@@ -17,13 +17,175 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>设计模式之工厂模式</title>
-    <link href="http://my.com/2019/10/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://my.com/2019/10/29/设计模式/设计模式之工厂模式/</id>
-    <published>2019-10-29T15:32:46.000Z</published>
-    <updated>2019-10-29T15:38:35.129Z</updated>
+    <title>Flutter/Flutter 基本语法</title>
+    <link href="http://my.com/2019/11/06/Flutter/Flutter%20%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
+    <id>http://my.com/2019/11/06/Flutter/Flutter 基本语法/</id>
+    <published>2019-11-05T16:05:00.890Z</published>
+    <updated>2019-11-05T16:14:14.115Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Final-and-const"><a href="#Final-and-const" class="headerlink" title="Final and const"></a>Final and const</h3><p>如果你以后不打算修改一个变量，使用 <code>final</code> 或者 <code>const</code>。 一个 final 变量只能赋值一次；一个 const 变量是编译时常量。 （Const 变量同时也是 final 变量。） 顶级的 final 变量或者类中的 final 变量在 第一次使用的时候初始化。</p><p><strong><em>注意： 实例变量可以为 <code>final</code> 但是不能是 <code>const</code> 。</em></strong></p><p><code>const</code> 变量为编译时常量。 如果 const 变量在类中，请定义为 <code>static const</code>。 可以直接定义 const 和其值，也 可以定义一个 const 变量使用其他 const 变量的值来初始化其值。</p><p><code>const</code> 关键字不仅仅只用来定义常量。 有可以用来创建不变的值， 还能定义构造函数为 const 类型的，这种类型 的构造函数创建的对象是不可改变的。任何变量都可以有一个不变的值。</p><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Note: [] creates an empty list.</span></span><br><span class="line"><span class="comment">// const [] creates an empty, immutable list (EIA).</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">const</span> [];   <span class="comment">// foo is currently an EIA.</span></span><br><span class="line"><span class="keyword">final</span> bar = <span class="keyword">const</span> []; <span class="comment">// bar will always be an EIA.</span></span><br><span class="line"><span class="keyword">const</span> baz = <span class="keyword">const</span> []; <span class="comment">// baz is a compile-time constant EIA.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// You can change the value of a non-final, non-const variable,</span></span><br><span class="line"><span class="comment">// even if it used to have a const value.</span></span><br><span class="line">foo = [];</span><br><span class="line"></span><br><span class="line"><span class="comment">// You can't change the value of a final or const variable.</span></span><br><span class="line"><span class="comment">// bar = []; // Unhandled exception.</span></span><br><span class="line"><span class="comment">// baz = []; // Unhandled exception.</span></span><br></pre></td></tr></table></figure><h3 id="Built-in-types-内置的类型"><a href="#Built-in-types-内置的类型" class="headerlink" title="Built-in types(内置的类型)"></a>Built-in types(内置的类型)</h3><p>Dart 内置支持下面这些类型：</p><ul><li>numbers</li><li>strings</li><li>booleans</li><li>lists (也被称之为 <em>arrays</em>)</li><li>maps</li><li>runes (用于在字符串中表示 Unicode 字符)</li><li>symbols</li></ul><h3 id="Numbers（数值）"><a href="#Numbers（数值）" class="headerlink" title="Numbers（数值）"></a>Numbers（数值）</h3><p>Dart 支持两种类型的数字：</p><ul><li><p><a href="https://api.dartlang.org/stable/dart-core/int-class.html" target="_blank" rel="noopener"><code>int</code></a></p><p>整数值，其取值通常位于 -253 和 253 之间。</p></li><li><p><a href="https://api.dartlang.org/stable/dart-core/double-class.html" target="_blank" rel="noopener"><code>double</code></a></p><p>64-bit (双精度) 浮点数，符合 IEEE 754 标准。</p></li></ul><p><code>int</code> 和 <code>double</code> 都是 <a href="https://api.dartlang.org/stable/dart-core/num-class.html" target="_blank" rel="noopener"><code>num</code></a> 的子类</p><h3 id="字符串和数字之间转换的方式："><a href="#字符串和数字之间转换的方式：" class="headerlink" title="字符串和数字之间转换的方式："></a>字符串和数字之间转换的方式：</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// String -&gt; int</span></span><br><span class="line"><span class="keyword">var</span> one = <span class="built_in">int</span>.parse(<span class="string">'1'</span>);</span><br><span class="line"><span class="keyword">assert</span>(one == <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// String -&gt; double</span></span><br><span class="line"><span class="keyword">var</span> onePointOne = <span class="built_in">double</span>.parse(<span class="string">'1.1'</span>);</span><br><span class="line"><span class="keyword">assert</span>(onePointOne == <span class="number">1.1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// int -&gt; String</span></span><br><span class="line"><span class="built_in">String</span> oneAsString = <span class="number">1.</span>toString();</span><br><span class="line"><span class="keyword">assert</span>(oneAsString == <span class="string">'1'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// double -&gt; String</span></span><br><span class="line"><span class="built_in">String</span> piAsString = <span class="number">3.14159</span>.toStringAsFixed(<span class="number">2</span>);</span><br><span class="line"><span class="keyword">assert</span>(piAsString == <span class="string">'3.14'</span>);</span><br></pre></td></tr></table></figure><h3 id=""><a href="#" class="headerlink" title="=="></a><code>==</code></h3><p>操作符判断两个对象的内容是否一样。 如果两个字符串包含一样的字符编码序列， 则他们是相等的</p><h3 id="三个单引号或者双引号也可以-创建多行字符串对象"><a href="#三个单引号或者双引号也可以-创建多行字符串对象" class="headerlink" title="三个单引号或者双引号也可以 创建多行字符串对象"></a>三个单引号或者双引号也可以 创建多行字符串对象</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s1 = <span class="string">'''</span></span><br><span class="line"><span class="string">You can create</span></span><br><span class="line"><span class="string">multi-line strings like this one.</span></span><br><span class="line"><span class="string">'''</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s2 = <span class="string">"""This is also a</span></span><br><span class="line"><span class="string">multi-line string."""</span>;</span><br></pre></td></tr></table></figure><h3 id="有疑问？那r到底是什么通过提供一个-r-前缀可以创建一个-“原始-raw”-字符串："><a href="#有疑问？那r到底是什么通过提供一个-r-前缀可以创建一个-“原始-raw”-字符串：" class="headerlink" title="有疑问？那r到底是什么通过提供一个 r 前缀可以创建一个 “原始 raw” 字符串："></a>有疑问？那r到底是什么通过提供一个 <code>r</code> 前缀可以创建一个 “原始 raw” 字符串：</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">r"In a raw string, even \n isn't special."</span>;</span><br></pre></td></tr></table></figure><p>字符串字面量是编译时常量， 带有字符串插值的字符串定义，若干插值表达式引用的为编译时常量则其结果也是编译时常量</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Final-and-const&quot;&gt;&lt;a href=&quot;#Final-and-const&quot; class=&quot;headerlink&quot; title=&quot;Final and const&quot;&gt;&lt;/a&gt;Final and const&lt;/h3&gt;&lt;p&gt;如果你以后不打算修改一个变量，使用 
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关键字</title>
+    <link href="http://my.com/2019/11/05/%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+    <id>http://my.com/2019/11/05/关键字/</id>
+    <published>2019-11-05T15:27:50.245Z</published>
+    <updated>2019-11-05T16:04:08.193Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="final"><a href="#final" class="headerlink" title="final"></a>final</h4><p> 最终，完结器，java中可以使用final 关键字声明类、属性、方法；</p><p>声明时注意</p><ul><li>使用final声明的类不能有子类</li><li>final 申明的方法不能被子类覆写</li><li>使用final申明的变量即为常量，常量不可以被修改</li></ul><h4 id="static"><a href="#static" class="headerlink" title="static"></a>static</h4><ul><li>使用static声明的属性，则此属性被称为全局属性（静态属性）</li><li>类方法  非static申明的方法可以调用static声明的属性或方法，但是，static声明的方法不能调用非static声明的属性或方法</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;final&quot;&gt;&lt;a href=&quot;#final&quot; class=&quot;headerlink&quot; title=&quot;final&quot;&gt;&lt;/a&gt;final&lt;/h4&gt;&lt;p&gt; 最终，完结器，java中可以使用final 关键字声明类、属性、方法；&lt;/p&gt;
+&lt;p&gt;声明时注意&lt;/p&gt;
+&lt;ul&gt;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Flutter/Flutter语法</title>
+    <link href="http://my.com/2019/11/04/Flutter/Flutter%E8%AF%AD%E6%B3%95/"/>
+    <id>http://my.com/2019/11/04/Flutter/Flutter语法/</id>
+    <published>2019-11-04T14:59:41.483Z</published>
+    <updated>2019-11-05T15:24:09.477Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="final和const"><a href="#final和const" class="headerlink" title="final和const"></a>final和const</h2><p>final和const 关键字用于声明不可变的(其实final是变量只能赋值一次)。不能修改使用final 或const 关键字声明的变量的值。</p><h4 id="共同点"><a href="#共同点" class="headerlink" title="共同点"></a><strong><em>共同点</em></strong></h4><ol><li><strong>声明时类型可以省略，一旦赋值不能再重新复制</strong></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">final String a = &apos;abc&apos;;</span><br><span class="line">final a = &apos;abc&apos;;</span><br><span class="line"></span><br><span class="line">const String a = &apos;abc&apos;;</span><br><span class="line">const a = &apos;abc&apos;;</span><br></pre></td></tr></table></figure><ol start="2"><li><p><strong>不能和var同时使用</strong></p><p>![image-20191104231659210](/Users/xfq/Library/Application Support/typora-user-images/image-20191104231659210.png)</p></li></ol><p><strong><em>区别</em></strong></p><h4 id="区别一"><a href="#区别一" class="headerlink" title="区别一"></a>区别一</h4><p>final 是单赋值，只能赋值一次，一旦赋值就不能再次修改</p><p>const 是声明时赋值，一经声明就不能再修改</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">final name; // 无类型注释</span><br><span class="line">final String nickname = &apos;Bobby&apos;; // 类型注释 String</span><br><span class="line">name = &apos;Bob&apos;; // 赋值第一次</span><br><span class="line">name = &apos;Alice&apos;; //错误：final变量 只能设置一次</span><br></pre></td></tr></table></figure><p><strong>const 是编译时常量，其值在编译时确定,必须在声明处赋值</strong></p><img src="/Users/xfq/Library/Application Support/typora-user-images/image-20191104233904218.png" alt="image-20191104233904218" style="zoom:50%;" /><p><strong>final变量与类变量在首次访问时才执行初始化</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">final name = getName();</span><br><span class="line"></span><br><span class="line">String getName() &#123;</span><br><span class="line">  print(&apos;getName&apos;);</span><br><span class="line">  return &apos;bob&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const String nickname = &apos;Bobby&apos;;</span><br><span class="line"></span><br><span class="line">main() &#123;</span><br><span class="line">    print(nickname);</span><br><span class="line">    print(name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>运行结果</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Bobby</span><br><span class="line">getName</span><br><span class="line">bob</span><br></pre></td></tr></table></figure><p>final 变量在没有访问时，是不会自动进行赋值的。所以并没有 打印出 getName。等到访问name变量时才调用 getName() 函数进行赋值。</p><h4 id="区别二"><a href="#区别二" class="headerlink" title="区别二"></a>区别二</h4><p>当<code>const</code>用在<code>=</code>左边时，其作用是 *<em>声明变量常量，它要求 *</em>必须在声明变量时赋值，一旦赋值就不允许修改，而声明值一定要是编译时常数。</p><h5 id="编译常量"><a href="#编译常量" class="headerlink" title="编译常量"></a>编译常量</h5><ul><li>表达式。表达式的所有值都是编译时可知的。</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void main() &#123;</span><br><span class="line">  const a = 1;</span><br><span class="line">  const b = a &gt; 1 ? 2 : 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>  <code>const</code>用在等号右边</p><p>当<code>const</code>用在<code>=</code>右边，其作用是 <strong>修饰值</strong>，它意味着对象的整个深度状态可以在编译时完全确定，并且对象将被冻结并且完全不可变。</p><p>一般用于修饰集合，它要求两点：</p><ul><li>集合的元素必须是递归的编译时常数</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">oid main() &#123;</span><br><span class="line">  var c = 2;</span><br><span class="line">  //ERROR, 集合元素必须是编译时常数。</span><br><span class="line">  var a = const [c,2,3];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>不允许对集合做任何改变。</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void main() &#123;</span><br><span class="line">  const a = const [1,2,3];</span><br><span class="line">  //ERROR, 不允许修改。</span><br><span class="line">  a[1] = 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li><code>const</code>修饰类的构造函数</li></ul><p>当<code>const</code>修饰类的构造函数时，它要求该类的所有成员都必须是<code>final</code>的。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class ConstObject &#123;</span><br><span class="line">  </span><br><span class="line">  final value;</span><br><span class="line">  //ERROR, 必须是 final 变量。</span><br><span class="line">  int value2;</span><br><span class="line">  </span><br><span class="line">  const ConstObject(this.value);</span><br><span class="line">  </span><br><span class="line">  log() &#123;</span><br><span class="line">    print(value);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>创建和设置const 常量：</p><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="built_in">String</span> nickname = <span class="string">'Bobby'</span>;</span><br><span class="line">nickname = <span class="string">'Alice'</span>; <span class="comment">// 错误：const变量不能再次赋值；</span></span><br></pre></td></tr></table></figure><p>const 关键字不只是用于声明常量，还可以用它来创建常量值；以及声明创建常量值的构造函数。任何变量都可以具有常量值。</p><p>例如：</p><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="keyword">const</span> [];</span><br><span class="line">foo = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; <span class="comment">// 第一次赋值；</span></span><br><span class="line">foo = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]; <span class="comment">// 错误： const变量不能再次赋值；</span></span><br></pre></td></tr></table></figure><p>如果是 final 变量就不能再次赋值：</p><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> bar = <span class="keyword">const</span> [];</span><br><span class="line">bar = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; <span class="comment">// 错误：final变量 只能设置一次</span></span><br></pre></td></tr></table></figure><h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><p><code>final</code>的要求就是 <strong>其声明的变量在赋值之后就不再改变</strong>，它并不要求<code>=</code>的右边是编译时常数。</p><p><code>final</code>有两种场景：</p><ul><li>文件中的变量声明：必须在声明时赋值。</li><li>类的成员变量声明：可以在声明时赋值，也可以通过构造函数赋值语法糖<code>ClassV({this.a})</code>，或者初始化列表的方式赋值。</li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h2 id="2-1-const"><a href="#2-1-const" class="headerlink" title="2.1 const"></a>2.1 const</h2><ul><li>声明类成员变量时，<code>const</code>变量必须同时被声明为<code>static</code>的。</li><li><code>const</code>变量，变量命名方式应使用全大写加下划线。</li><li><code>const</code>变量只能在定义的时候初始化。</li></ul><h2 id="2-2-final"><a href="#2-2-final" class="headerlink" title="2.2 final"></a>2.2 final</h2><ul><li><code>final</code>变量可以在构造函数参数列表或者初始化列表中初始化。</li></ul><h2 id="2-3-static"><a href="#2-3-static" class="headerlink" title="2.3 static"></a>2.3 static</h2><ul><li>在文件中，变量不能声明为<code>static</code>。</li></ul><h2 id="2-4实例变量可以是final-不可能是const"><a href="#2-4实例变量可以是final-不可能是const" class="headerlink" title="2.4实例变量可以是final 不可能是const"></a>2.4实例变量可以是final 不可能是const</h2><p>最终实例变量必须在构造函数主体开始之前初始化， 那么为什么呢？ const必须在声明的时候就初始化，那实例对象初始化也没有什么意义，final至少可以赋值一次</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;final和const&quot;&gt;&lt;a href=&quot;#final和const&quot; class=&quot;headerlink&quot; title=&quot;final和const&quot;&gt;&lt;/a&gt;final和const&lt;/h2&gt;&lt;p&gt;final和const 关键字用于声明不可变的(其实final是变量
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>android studio 常用快捷键</title>
+    <link href="http://my.com/2019/11/03/android%20studio%20%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://my.com/2019/11/03/android studio 常用快捷键/</id>
+    <published>2019-11-03T09:19:12.007Z</published>
+    <updated>2019-11-03T09:19:12.008Z</updated>
+    
+    <content type="html"><![CDATA[<p> Android Studio常用操作</p><h2 id="文本替换"><a href="#文本替换" class="headerlink" title="文本替换"></a>文本替换</h2><ol><li><p>全文文本替换 command + shift +r</p></li><li><p>文件内文本替换 command + r</p></li><li><p>一次性修改同一文件中所有搜索到的文字 command+control+g</p></li></ol><h2 id="文本查找"><a href="#文本查找" class="headerlink" title="文本查找"></a>文本查找</h2><ol><li>全文文本查找 command + shift +f</li><li>文件内文本查找 command + f</li><li>查找下一个 command + g</li><li>查找上一个 command + shift + g</li></ol><h2 id="代码格式整理"><a href="#代码格式整理" class="headerlink" title="代码格式整理"></a>代码格式整理</h2><ol><li>代码对其整理 command + option +L</li><li></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt; Android Studio常用操作&lt;/p&gt;
+&lt;h2 id=&quot;文本替换&quot;&gt;&lt;a href=&quot;#文本替换&quot; class=&quot;headerlink&quot; title=&quot;文本替换&quot;&gt;&lt;/a&gt;文本替换&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;全文文本替换 command + shift +r&lt;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Typora 简单使用</title>
+    <link href="http://my.com/2019/11/03/Typora%20%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
+    <id>http://my.com/2019/11/03/Typora 简单使用/</id>
+    <published>2019-11-03T02:48:29.534Z</published>
+    <updated>2019-11-03T04:06:42.415Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Typora的简单使用-mac"><a href="#Typora的简单使用-mac" class="headerlink" title="Typora的简单使用 mac"></a>Typora的简单使用 mac</h1><p>[TOC]</p><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>command+ 数字（1、2….6）</p><h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><p>command+u</p><p><u>下划线</u></p><h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p><del>删除线</del></p><blockquote><p><del>123456</del></p></blockquote><p><del>qqq</del></p><h2 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h2><p><strong>command+b</strong></p><h2 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h2><p><em>这里是斜体</em></p><h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.jianshu.com/p/092de536d948" target="_blank" rel="noopener">command + k</a></p><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote><p>引用直接使用  &gt;</p><blockquote><p>这里又是一个 &gt;</p></blockquote></blockquote><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table><p>  command + option + t</p><h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><blockquote><p><code>code</code>  前面三个 ```   后面三个</p></blockquote><p>其他内容查看 <a href="https://www.jianshu.com/p/092de536d948" target="_blank" rel="noopener">https://www.jianshu.com/p/092de536d948</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Typora的简单使用-mac&quot;&gt;&lt;a href=&quot;#Typora的简单使用-mac&quot; class=&quot;headerlink&quot; title=&quot;Typora的简单使用 mac&quot;&gt;&lt;/a&gt;Typora的简单使用 mac&lt;/h1&gt;&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>抓包原理</title>
+    <link href="http://my.com/2019/11/03/%E6%8A%93%E5%8C%85%E5%8E%9F%E7%90%86/"/>
+    <id>http://my.com/2019/11/03/抓包原理/</id>
+    <published>2019-11-03T02:45:27.000Z</published>
+    <updated>2019-11-03T04:12:16.553Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>context的理解</title>
+    <link href="http://my.com/2019/11/01/context%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+    <id>http://my.com/2019/11/01/context的理解/</id>
+    <published>2019-11-01T15:12:18.000Z</published>
+    <updated>2019-11-03T04:07:16.360Z</updated>
+    
+    <content type="html"><![CDATA[<p>理解成创建widget的上下文就可以了。context实际是element，是为了阻止直接对element操作而抽象出来的一个概念</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;理解成创建widget的上下文就可以了。context实际是element，是为了阻止直接对element操作而抽象出来的一个概念&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之工厂模式</title>
+    <link href="http://my.com/2019/10/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://my.com/2019/10/29/设计模式之工厂模式/</id>
+    <published>2019-10-29T15:32:46.000Z</published>
+    <updated>2019-10-29T16:14:18.878Z</updated>
+    
+    <content type="html"><![CDATA[<p>###工厂模式（Factory Pattern）</p><p>工厂模式（Factory Pattern）创建型模式，提供一种应用于创建对象的方法</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;###工厂模式（Factory Pattern）&lt;/p&gt;
+&lt;p&gt;工厂模式（Factory Pattern）创建型模式，提供一种应用于创建对象的方法&lt;/p&gt;
+
+      
     
     </summary>
     
