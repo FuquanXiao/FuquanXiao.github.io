@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Flutter语法 </title>
+  <meta name="description" content="final和constfinal和const 关键字用于声明不可变的(其实final是变量只能赋值一次)。不能修改使用final 或const 关键字声明的变量的值。 共同点 声明时类型可以省略，一旦赋值不能再重新复制  12345final String a = &amp;apos;abc&amp;apos;;final a = &amp;apos;abc&amp;apos;;const String a = &amp;apos;ab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter语法">
+<meta property="og:url" content="http:&#x2F;&#x2F;my.com&#x2F;2019&#x2F;11&#x2F;04&#x2F;Flutter%E8%AF%AD%E6%B3%95&#x2F;index.html">
+<meta property="og:site_name" content="傻瓜|无情">
+<meta property="og:description" content="final和constfinal和const 关键字用于声明不可变的(其实final是变量只能赋值一次)。不能修改使用final 或const 关键字声明的变量的值。 共同点 声明时类型可以省略，一旦赋值不能再重新复制  12345final String a = &amp;apos;abc&amp;apos;;final a = &amp;apos;abc&amp;apos;;const String a = &amp;apos;ab">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http:&#x2F;&#x2F;my.com&#x2F;Users&#x2F;xfq&#x2F;Library&#x2F;Application%20Support&#x2F;typora-user-images&#x2F;image-20191104233904218.png">
+<meta property="og:updated_time" content="2019-11-05T15:24:09.477Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;my.com&#x2F;Users&#x2F;xfq&#x2F;Library&#x2F;Application%20Support&#x2F;typora-user-images&#x2F;image-20191104233904218.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://my.com/2019/11/04/Flutter%E8%AF%AD%E6%B3%95/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="傻瓜|无情" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://git.coding.net/Xiaowuqing/Xiaowuqing.git" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">肖</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">傻瓜 &amp; 编程</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/" rel="tag">编程基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/09/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="title">git常用命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-09T08:13:28.000Z" itemprop="datePublished">2019-11-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/09/git%E5%B8%B8%E7%94%A8%E5%9C%BA%E6%99%AF/" class="title">git常用命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-09T08:13:28.000Z" itemprop="datePublished">2019-11-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/06/Flutter%20%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="title">Flutter 基本语法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-05T16:05:00.890Z" itemprop="datePublished">2019-11-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/05/%E5%85%B3%E9%94%AE%E5%AD%97/" class="title">关键字</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-05T15:27:50.245Z" itemprop="datePublished">2019-11-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/04/Flutter%E8%AF%AD%E6%B3%95/" class="title">Flutter语法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-04T14:59:41.483Z" itemprop="datePublished">2019-11-04</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Flutter语法" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Flutter语法
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/11/04/Flutter%E8%AF%AD%E6%B3%95/" class="article-date">
+	  <time datetime="2019-11-04T14:59:41.483Z" itemprop="datePublished">2019-11-04</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/11/04/Flutter%E8%AF%AD%E6%B3%95/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="final和const"><a href="#final和const" class="headerlink" title="final和const"></a>final和const</h2><p>final和const 关键字用于声明不可变的(其实final是变量只能赋值一次)。不能修改使用final 或const 关键字声明的变量的值。</p>
+<h4 id="共同点"><a href="#共同点" class="headerlink" title="共同点"></a><strong><em>共同点</em></strong></h4><ol>
+<li><strong>声明时类型可以省略，一旦赋值不能再重新复制</strong></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">final String a = &apos;abc&apos;;</span><br><span class="line">final a = &apos;abc&apos;;</span><br><span class="line"></span><br><span class="line">const String a = &apos;abc&apos;;</span><br><span class="line">const a = &apos;abc&apos;;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p><strong>不能和var同时使用</strong></p>
+<p>![image-20191104231659210](/Users/xfq/Library/Application Support/typora-user-images/image-20191104231659210.png)</p>
+</li>
+</ol>
+<p><strong><em>区别</em></strong></p>
+<h4 id="区别一"><a href="#区别一" class="headerlink" title="区别一"></a>区别一</h4><p>final 是单赋值，只能赋值一次，一旦赋值就不能再次修改</p>
+<p>const 是声明时赋值，一经声明就不能再修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">final name; // 无类型注释</span><br><span class="line">final String nickname = &apos;Bobby&apos;; // 类型注释 String</span><br><span class="line">name = &apos;Bob&apos;; // 赋值第一次</span><br><span class="line">name = &apos;Alice&apos;; //错误：final变量 只能设置一次</span><br></pre></td></tr></table></figure>
+
+<p><strong>const 是编译时常量，其值在编译时确定,必须在声明处赋值</strong></p>
+<img src="/Users/xfq/Library/Application Support/typora-user-images/image-20191104233904218.png" alt="image-20191104233904218" style="zoom:50%;" />
+
+<p><strong>final变量与类变量在首次访问时才执行初始化</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">final name = getName();</span><br><span class="line"></span><br><span class="line">String getName() &#123;</span><br><span class="line">  print(&apos;getName&apos;);</span><br><span class="line">  return &apos;bob&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const String nickname = &apos;Bobby&apos;;</span><br><span class="line"></span><br><span class="line">main() &#123;</span><br><span class="line">    print(nickname);</span><br><span class="line">    print(name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Bobby</span><br><span class="line">getName</span><br><span class="line">bob</span><br></pre></td></tr></table></figure>
+
+
+
+<p>final 变量在没有访问时，是不会自动进行赋值的。所以并没有 打印出 getName。等到访问name变量时才调用 getName() 函数进行赋值。</p>
+<h4 id="区别二"><a href="#区别二" class="headerlink" title="区别二"></a>区别二</h4><p>当<code>const</code>用在<code>=</code>左边时，其作用是 *<em>声明变量常量，它要求 *</em>必须在声明变量时赋值，一旦赋值就不允许修改，而声明值一定要是编译时常数。</p>
+<h5 id="编译常量"><a href="#编译常量" class="headerlink" title="编译常量"></a>编译常量</h5><ul>
+<li>表达式。表达式的所有值都是编译时可知的。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void main() &#123;</span><br><span class="line">  const a = 1;</span><br><span class="line">  const b = a &gt; 1 ? 2 : 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  <code>const</code>用在等号右边</p>
+<p>当<code>const</code>用在<code>=</code>右边，其作用是 <strong>修饰值</strong>，它意味着对象的整个深度状态可以在编译时完全确定，并且对象将被冻结并且完全不可变。</p>
+<p>一般用于修饰集合，它要求两点：</p>
+<ul>
+<li>集合的元素必须是递归的编译时常数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">oid main() &#123;</span><br><span class="line">  var c = 2;</span><br><span class="line">  //ERROR, 集合元素必须是编译时常数。</span><br><span class="line">  var a = const [c,2,3];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>不允许对集合做任何改变。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void main() &#123;</span><br><span class="line">  const a = const [1,2,3];</span><br><span class="line">  //ERROR, 不允许修改。</span><br><span class="line">  a[1] = 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>const</code>修饰类的构造函数</li>
+</ul>
+<p>当<code>const</code>修饰类的构造函数时，它要求该类的所有成员都必须是<code>final</code>的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class ConstObject &#123;</span><br><span class="line">  </span><br><span class="line">  final value;</span><br><span class="line">  //ERROR, 必须是 final 变量。</span><br><span class="line">  int value2;</span><br><span class="line">  </span><br><span class="line">  const ConstObject(this.value);</span><br><span class="line">  </span><br><span class="line">  log() &#123;</span><br><span class="line">    print(value);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>创建和设置const 常量：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="built_in">String</span> nickname = <span class="string">'Bobby'</span>;</span><br><span class="line">nickname = <span class="string">'Alice'</span>; <span class="comment">// 错误：const变量不能再次赋值；</span></span><br></pre></td></tr></table></figure>
+
+<p>const 关键字不只是用于声明常量，还可以用它来创建常量值；以及声明创建常量值的构造函数。任何变量都可以具有常量值。</p>
+<p>例如：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="keyword">const</span> [];</span><br><span class="line">foo = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; <span class="comment">// 第一次赋值；</span></span><br><span class="line">foo = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]; <span class="comment">// 错误： const变量不能再次赋值；</span></span><br></pre></td></tr></table></figure>
+
+<p>如果是 final 变量就不能再次赋值：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> bar = <span class="keyword">const</span> [];</span><br><span class="line">bar = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; <span class="comment">// 错误：final变量 只能设置一次</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><p><code>final</code>的要求就是 <strong>其声明的变量在赋值之后就不再改变</strong>，它并不要求<code>=</code>的右边是编译时常数。</p>
+<p><code>final</code>有两种场景：</p>
+<ul>
+<li>文件中的变量声明：必须在声明时赋值。</li>
+<li>类的成员变量声明：可以在声明时赋值，也可以通过构造函数赋值语法糖<code>ClassV({this.a})</code>，或者初始化列表的方式赋值。</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h2 id="2-1-const"><a href="#2-1-const" class="headerlink" title="2.1 const"></a>2.1 const</h2><ul>
+<li>声明类成员变量时，<code>const</code>变量必须同时被声明为<code>static</code>的。</li>
+<li><code>const</code>变量，变量命名方式应使用全大写加下划线。</li>
+<li><code>const</code>变量只能在定义的时候初始化。</li>
+</ul>
+<h2 id="2-2-final"><a href="#2-2-final" class="headerlink" title="2.2 final"></a>2.2 final</h2><ul>
+<li><code>final</code>变量可以在构造函数参数列表或者初始化列表中初始化。</li>
+</ul>
+<h2 id="2-3-static"><a href="#2-3-static" class="headerlink" title="2.3 static"></a>2.3 static</h2><ul>
+<li>在文件中，变量不能声明为<code>static</code>。</li>
+</ul>
+<h2 id="2-4实例变量可以是final-不可能是const"><a href="#2-4实例变量可以是final-不可能是const" class="headerlink" title="2.4实例变量可以是final 不可能是const"></a>2.4实例变量可以是final 不可能是const</h2><p>最终实例变量必须在构造函数主体开始之前初始化， 那么为什么呢？ const必须在声明的时候就初始化，那实例对象初始化也没有什么意义，final至少可以赋值一次</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>岁月不饶人，我亦未曾放过岁月</strong>
+      <!--<a href="http://my.com/2019/11/04/Flutter%E8%AF%AD%E6%B3%95/" title="Flutter语法" target="_blank" rel="external">http://my.com/2019/11/04/Flutter%E8%AF%AD%E6%B3%95/</a>-->
+    </li>
+    
+    <li class="post-copyright-license">
+      <!--<strong> </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！-->
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://git.coding.net/Xiaowuqing/Xiaowuqing.git" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://git.coding.net/Xiaowuqing/Xiaowuqing.git" target="_blank"><span class="text-dark">肖</span><small class="ml-1x">傻瓜 &amp; 编程</small></a></h3>
+        <div>比你优秀的人，却比你更努力。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2019/11/05/%E5%85%B3%E9%94%AE%E5%AD%97/" title="关键字"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2019/11/03/android%20studio%20%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="android studio 常用快捷键"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <!--<footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>-->
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

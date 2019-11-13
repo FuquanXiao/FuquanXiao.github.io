@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>git常用命令 </title>
+  <meta name="description" content="[TOC] 1、版本库创建版本库（文件夹）mkdir lerangit```1234进入到该目录下``` $ cd learngit  查看文件路径 pwd ```12345678&amp;gt; &#x2F;Users&#x2F;xfq&#x2F;Desktop&#x2F;learngit### 初始化版本库git init 通过`git init`命令把这个目录变成Git可以管理的仓库```$git init   Initialized e">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git常用命令">
+<meta property="og:url" content="http:&#x2F;&#x2F;my.com&#x2F;2019&#x2F;11&#x2F;09&#x2F;git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4&#x2F;index.html">
+<meta property="og:site_name" content="傻瓜|无情">
+<meta property="og:description" content="[TOC] 1、版本库创建版本库（文件夹）mkdir lerangit```1234进入到该目录下``` $ cd learngit  查看文件路径 pwd ```12345678&amp;gt; &#x2F;Users&#x2F;xfq&#x2F;Desktop&#x2F;learngit### 初始化版本库git init 通过`git init`命令把这个目录变成Git可以管理的仓库```$git init   Initialized e">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-10T15:55:54.751Z">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://my.com/2019/11/09/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="傻瓜|无情" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://git.coding.net/Xiaowuqing/Xiaowuqing.git" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">肖</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">傻瓜 &amp; 编程</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/" rel="tag">编程基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/09/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="title">git常用命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-09T08:13:28.000Z" itemprop="datePublished">2019-11-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/09/git%E5%B8%B8%E7%94%A8%E5%9C%BA%E6%99%AF/" class="title">git常用命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-09T08:13:28.000Z" itemprop="datePublished">2019-11-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/06/Flutter%20%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="title">Flutter 基本语法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-05T16:05:00.890Z" itemprop="datePublished">2019-11-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/05/%E5%85%B3%E9%94%AE%E5%AD%97/" class="title">关键字</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-05T15:27:50.245Z" itemprop="datePublished">2019-11-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/04/Flutter%E8%AF%AD%E6%B3%95/" class="title">Flutter语法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-04T14:59:41.483Z" itemprop="datePublished">2019-11-04</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-git常用命令" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git常用命令
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/11/09/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
+	  <time datetime="2019-11-09T08:13:28.000Z" itemprop="datePublished">2019-11-09</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/11/09/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h2 id="1、版本库"><a href="#1、版本库" class="headerlink" title="1、版本库"></a>1、版本库</h2><h3 id="创建版本库（文件夹）"><a href="#创建版本库（文件夹）" class="headerlink" title="创建版本库（文件夹）"></a>创建版本库（文件夹）</h3><figure class="highlight plain"><figcaption><span>mkdir lerangit```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">进入到该目录下</span><br><span class="line"></span><br><span class="line">``` $ cd learngit</span><br></pre></td></tr></table></figure>
+
+<p>查看文件路径</p>
+<figure class="highlight plain"><figcaption><span>pwd ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; /Users/xfq/Desktop/learngit</span><br><span class="line"></span><br><span class="line">### 初始化版本库git init</span><br><span class="line"></span><br><span class="line"> 通过`git init`命令把这个目录变成Git可以管理的仓库</span><br><span class="line"></span><br><span class="line">```$git init</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Initialized empty Git repository in /Users/xfq/Desktop/learngit/.git/</p>
+</blockquote>
+<p>放进去两个文件</p>
+<h3 id="添加到仓库"><a href="#添加到仓库" class="headerlink" title="添加到仓库"></a>添加到仓库</h3><p>添加某一个文件</p>
+<figure class="highlight plain"><figcaption><span>add MyView.txt```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">添加全部文件</span><br><span class="line"></span><br><span class="line">```$git add .</span><br></pre></td></tr></table></figure>
+
+<p>注意点add 后面的 ”  .  “ 和add之间有一个空格</p>
+<h3 id="提交到仓库"><a href="#提交到仓库" class="headerlink" title="提交到仓库"></a>提交到仓库</h3><figure class="highlight plain"><figcaption><span>git commit -m "learn git"```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">或者  ```$ git commit -m```输入详细的注释</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 2、版本控制</span><br><span class="line"></span><br><span class="line">进行几次操作</span><br><span class="line"></span><br><span class="line">1、删除.swift文件 -&gt;提交</span><br><span class="line"></span><br><span class="line">2、添加一个新的txt -&gt; 提交</span><br><span class="line"></span><br><span class="line">3、修改第一个txt即MyView.txt 文件 —&gt;提交</span><br><span class="line"></span><br><span class="line">### 历史记录git log</span><br><span class="line"></span><br><span class="line">```$git log</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Date:   Sat Nov 9 16:49:23 2019 +0800</span><br><span class="line">    modify first txt</span><br><span class="line"></span><br><span class="line">commit 4aa751bb72b9373ce85783d9fc8b88cff3a6565c</span><br><span class="line">Author: xfq &lt;xfq@xfqdeMacBook-Pro.local&gt;</span><br><span class="line">Date:   Sat Nov 9 16:48:46 2019 +0800</span><br><span class="line">    add new txt</span><br><span class="line"></span><br><span class="line">commit 8f04464e6c46d3fbfbcd4e934599a567161f498e</span><br><span class="line">Author: xfq &lt;xfq@xfqdeMacBook-Pro.local&gt;</span><br><span class="line">Date:   Sat Nov 9 16:47:34 2019 +0800</span><br><span class="line">    delete .swift</span><br><span class="line"></span><br><span class="line">commit dc9828ad2125b111ea4f6e010c5213f3c029c6f8</span><br><span class="line">Author: xfq &lt;xfq@xfqdeMacBook-Pro.local&gt;</span><br><span class="line">Date:   Sat Nov 9 16:36:59 2019 +0800</span><br><span class="line">    learn git</span><br><span class="line">:</span><br></pre></td></tr></table></figure>
+
+
+
+<p>或者使用 输出commit id 和 描述 信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --pretty=oneline</span><br></pre></td></tr></table></figure>
+
+<p>fb118149f888a957e01539bc645b6c4d656f081a modify first txt<br>4aa751bb72b9373ce85783d9fc8b88cff3a6565c add new txt<br>8f04464e6c46d3fbfbcd4e934599a567161f498e delete .swift<br>dc9828ad2125b111ea4f6e010c5213f3c029c6f8 learn git</p>
+<h3 id="返回版本-撤销commit"><a href="#返回版本-撤销commit" class="headerlink" title="返回版本-撤销commit"></a>返回版本-撤销commit</h3><blockquote>
+<p>方法1 git reset –hard HEAD ^</p>
+<p>git reset –hard HEAD ^  ( ^ 表示回到上一个版本，如果需要回退到上上个版本的话，将HEAD^改成HEAD^^, 以此类推。那如果要回退到前100个版本，这种方法肯定不方便，我们可以使用简便命令操作：git reset –hard HEAD~100 );</p>
+</blockquote>
+<blockquote>
+<p>方法2 ：git reset –hard 版本号 </p>
+</blockquote>
+<ul>
+<li>返回上一个版本</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>reset --hard HEAD^```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>git reset –hard HEAD^<br>HEAD is now at 4aa751b add new txt</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">此时文件MyView.txt已经找回了修改前的内容；</span><br><span class="line"></span><br><span class="line">- 重新回到modify first txt版本（最新版本）</span><br><span class="line"></span><br><span class="line">如果当前终端没有关闭</span><br><span class="line"></span><br><span class="line">可以往上翻找到modify first txt版本commit id 为 fb11814...；</span><br></pre></td></tr></table></figure>
+<p>git reset –hard fb11814<br>HEAD is now at fb11814 modify first txt<br>xfqdeMacBook-Pro:learnGit xfq$ </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- 返回上上个（ delete .swift）版本</span><br></pre></td></tr></table></figure>
+<p>git reset –hard 8f0446<br>HEAD is now at 8f04464 delete .swift</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">此时addnew.txt 还没有被创建；</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- 想回到 modify first txt</span><br><span class="line"></span><br><span class="line">这个时候终端关了，上面的记录没有了找不到commit id</span><br></pre></td></tr></table></figure>
+<p>git reflog<br>8f04464 HEAD@{0}: reset: moving to 8f0446<br>fb11814 HEAD@{1}: reset: moving to fb118<br>4aa751b HEAD@{2}: reset: moving to HEAD^<br>fb11814 HEAD@{3}: reset: moving to fb118<br>4aa751b HEAD@{4}: reset: moving to 4aa751<br>4aa751b HEAD@{5}: reset: moving to HEAD^<br>上面的几次是来回移动的记录<br>fb11814 HEAD@{6}: commit: modify first txt<br>4aa751b HEAD@{7}: commit: add new txt<br>8f04464 HEAD@{8}: commit: delete .swift<br>dc9828a HEAD@{9}: commit (initial): learn git</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>git reset –hard fb11814<br>HEAD is now at fb11814 modify first txt</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 管理修改</span><br><span class="line"></span><br><span class="line">修改的文件在推送到远程之前 是在工作区，暂存区，master工作</span><br><span class="line"></span><br><span class="line">### 撤销修改</span><br><span class="line"></span><br><span class="line">1. 工作区修改了文件 没有提交到暂存区（没有执行add 操作）working tree内撤销</span><br><span class="line">2. 工作区修改了文件 提交到了暂存区（执行了 add操作）</span><br><span class="line">3. 工作区修改了文件提交到了master分支（执行了 add commit操作）</span><br><span class="line"></span><br><span class="line">1的解决办法</span><br><span class="line"></span><br><span class="line">a: 直接修改工作区的文件，就是把你的修改撤回😄</span><br><span class="line"></span><br><span class="line">b：git status 看一下状态</span><br></pre></td></tr></table></figure>
+<p>git status<br>On branch master<br>Changes not staged for commit:<br>  (use “git add <file>…” to update what will be committed)<br>  (use “git checkout – <file>…” to discard changes in working directory)</p>
+<pre><code>modified:   AddNew.txt</code></pre><p>no changes added to commit (use “git add” and/or “git commit -a”)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- git checkout -- &lt;file&gt; 丢弃工作区某一文件的修改</span><br><span class="line">- git checkout  .  丢弃所有的修改(不包含新建的没有被add的文件，因为Untracked) </span><br><span class="line"></span><br><span class="line">``git checkout -- AddNew.txt``</span><br><span class="line"></span><br><span class="line">2的解决办法</span><br><span class="line"></span><br><span class="line">执行git status</span><br></pre></td></tr></table></figure>
+<p>git status<br>On branch master<br>Changes to be committed:<br>  (use “git reset HEAD <file>…” to unstage)</p>
+<pre><code>modified:   AddNew.txt
+new file:   ForBackAddFile.txt
+modified:   MyView.txt</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">`git reset HEAD `</span><br><span class="line"></span><br><span class="line">用命令`git reset HEAD `可以把所有暂存区的修改撤销掉（unstage），重新放回工作区包括新建的文件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">把部分文件的add 撤销</span><br></pre></td></tr></table></figure>
+<p>git reset HEAD <file>…</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">然后再 在执行git checkout -- file  或者git checkout .</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 3、远程库</span><br><span class="line"></span><br><span class="line">在远程建立了远程仓库 把本地的learngit 提交到远程仓库</span><br><span class="line"></span><br><span class="line">方法一：在远程（github等）上建立仓库，把仓库clone 下来，把learngit代码拉进去，直接提交 </span><br><span class="line"></span><br><span class="line">常用，不在这次学习范畴。直接粘贴几个命令</span><br><span class="line"></span><br><span class="line">方法二：在远程（github等）上建立仓库 把learngit和远程直接建立联系</span><br><span class="line"></span><br><span class="line">- 和远程仓库建立联系</span><br><span class="line"></span><br><span class="line">  ```git remote add origin https://git.coding.net/Xiaowuqing/1111.git</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>推送到远程<ol>
+<li>远程仓库有README.md文件</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>push origin master```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; To https://git.coding.net/xxxx/learnGit.git</span><br><span class="line">&gt;</span><br><span class="line">&gt; ! [rejected]    master -&gt; master (non-fast-forward)</span><br><span class="line">&gt;</span><br><span class="line">&gt; error: failed to push some refs to &apos;https://git.coding.net/xxxx/learnGit.git&apos;</span><br><span class="line">&gt;</span><br><span class="line">&gt; hint: Updates were rejected because the tip of your current branch is behind</span><br><span class="line">&gt;</span><br><span class="line">&gt; hint: its remote counterpart. Integrate the remote changes (e.g.</span><br><span class="line">&gt;</span><br><span class="line">&gt; hint: &apos;git pull ...&apos;) before pushing again.</span><br><span class="line">&gt;</span><br><span class="line">&gt; hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</span><br><span class="line"></span><br><span class="line">&gt; 错误原因其实是我本地没有README.md这个文件，而远程仓库中有， </span><br><span class="line">&gt; 如何解决那？ </span><br><span class="line">&gt; 很简单 </span><br><span class="line">&gt; git pull --rebase origin master </span><br><span class="line">&gt; 执行这一句就行了 </span><br><span class="line">&gt; 执行完后会发现本地已经有了 README.md 这个文件</span><br><span class="line">&gt;</span><br><span class="line">&gt; 然后就是常规操作了 </span><br><span class="line">&gt; git push -u origin master </span><br><span class="line"></span><br><span class="line">其实后面的这个常规操作我是执行的git push  origin master  也成功了 **所有没有理解git push -u origin master **</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt; [由于远程库是空的，我们第一次推送`master`分支时，加上了`-u`参数，Git不但会把本地的`master`分支内容推送的远程新的`master`分支，还会把本地的`master`分支和远程的`master`分支关联起来，在以后的推送或者拉取时就可以简化命令](https://www.liaoxuefeng.com/wiki/896043488029600/898732864121440)。</span><br><span class="line"></span><br><span class="line">2. 无README.md文件</span><br><span class="line"></span><br><span class="line">```diff</span><br><span class="line">    xfqdeMacBook-Pro:~ xfq$ cd /Users/xfq/Desktop/33</span><br><span class="line">    </span><br><span class="line">    初始化</span><br><span class="line">    xfqdeMacBook-Pro:33 xfq$ git init</span><br><span class="line">    Initialized empty Git repository in /Users/xfq/Desktop/33/.git/</span><br><span class="line">    </span><br><span class="line">    创建txt</span><br><span class="line">    xfqdeMacBook-Pro:33 xfq$ vim 1.txt</span><br><span class="line">    </span><br><span class="line">    和远程建立关联</span><br><span class="line">    xfqdeMacBook-Pro:33 xfq$ git remote add origin https://git.coding.net/Xiaowuqing/22.git</span><br><span class="line">    </span><br><span class="line">    直接推动报错，因为本地文件没有提交</span><br><span class="line">    xfqdeMacBook-Pro:33 xfq$ git push origin master</span><br><span class="line">error: src refspec master does not match any.</span><br><span class="line">error: failed to push some refs to &apos;https://git.coding.net/Xiaowuqing/22.git&apos;</span><br><span class="line">    </span><br><span class="line">    查看本地状态</span><br><span class="line">    xfqdeMacBook-Pro:33 xfq$ git status</span><br><span class="line">    On branch master</span><br><span class="line">    Initial commit</span><br><span class="line">    Untracked files:</span><br><span class="line">    (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span><br><span class="line">    1.txt</span><br><span class="line">    nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span><br><span class="line">    </span><br><span class="line">    添加到暂存区</span><br><span class="line">    xfqdeMacBook-Pro:33 xfq$ git add .</span><br><span class="line">    </span><br><span class="line">    提交到master </span><br><span class="line">    xfqdeMacBook-Pro:33 xfq$ git commit -m &quot;init&quot;</span><br><span class="line">    [master (root-commit) 04a2677] init</span><br><span class="line">    1 file changed, 1 insertion(+)</span><br><span class="line">    create mode 100644 1.txt</span><br><span class="line">    </span><br><span class="line">    推动到远程</span><br><span class="line">    xfqdeMacBook-Pro:33 xfq$ git push origin master</span><br><span class="line">    Counting objects: 3, done.</span><br><span class="line">    Writing objects: 100% (3/3), 211 bytes | 0 bytes/s, done.</span><br><span class="line">    Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">    To https://git.coding.net/Xiaowuqing/22.git</span><br><span class="line">    * [new branch]      master -&gt; master</span><br><span class="line">    xfqdeMacBook-Pro:33 xfq$</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、分支管理"><a href="#4、分支管理" class="headerlink" title="4、分支管理"></a>4、分支管理</h2><figure class="highlight plain"><figcaption><span>xfq$ cd</span><a href="/Users/xfq/Desktop/33">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">xfqdeMacBook-Pro:~ xfq$ cd /Users/xfq/Desktop/33</span><br><span class="line"></span><br><span class="line">查看分支 *指向的就是当前分支</span><br><span class="line">xfqdeMacBook-Pro:33 xfq$ git branch</span><br><span class="line">* master</span><br><span class="line"></span><br><span class="line">创建并指向dev分支</span><br><span class="line">xfqdeMacBook-Pro:33 xfq$ git checkout -b dev</span><br><span class="line">Switched to a new branch &apos;dev&apos;</span><br><span class="line"></span><br><span class="line">查看分支</span><br><span class="line">xfqdeMacBook-Pro:33 xfq$ git branch</span><br><span class="line">* dev</span><br><span class="line">  master</span><br><span class="line">  </span><br><span class="line">创建分支</span><br><span class="line">xfqdeMacBook-Pro:33 xfq$ git branch bug</span><br><span class="line"></span><br><span class="line">xfqdeMacBook-Pro:33 xfq$ git branch</span><br><span class="line">  bug</span><br><span class="line">* dev</span><br><span class="line">  master</span><br><span class="line">  </span><br><span class="line">  修改当前分支</span><br><span class="line">xfqdeMacBook-Pro:33 xfq$ git checkout bug</span><br><span class="line">Switched to branch &apos;bug&apos;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">xfqdeMacBook-Pro:33 xfq$ git branch</span><br><span class="line">* bug</span><br><span class="line">  dev</span><br><span class="line">  master</span><br><span class="line"> </span><br><span class="line"> 在bug分支提交</span><br><span class="line">xfqdeMacBook-Pro:33 xfq$ git add .</span><br><span class="line">xfqdeMacBook-Pro:33 xfq$ git commit -m &quot;modify txt and commit in bug branch&quot;</span><br><span class="line">[bug bc3594f] modify txt and commit in bug branch</span><br><span class="line"> 2 files changed, 3 insertions(+)</span><br><span class="line"> </span><br><span class="line"> 切换分支</span><br><span class="line">xfqdeMacBook-Pro:33 xfq$ git checkout master</span><br><span class="line">Switched to branch &apos;master&apos;</span><br><span class="line"></span><br><span class="line">把bug分支合并到当前分支</span><br><span class="line">xfqdeMacBook-Pro:33 xfq$ git merge bug</span><br><span class="line">Merge made by the &apos;recursive&apos; strategy.</span><br><span class="line"> 1.txt | 2 ++</span><br><span class="line"> 2.txt | 1 +</span><br><span class="line"> 2 files changed, 3 insertions(+)</span><br><span class="line"> </span><br><span class="line"> 删除bug分支</span><br><span class="line">xfqdeMacBook-Pro:33 xfq$ git branch -d bug</span><br><span class="line">Deleted branch bug (was bc3594f).</span><br><span class="line">xfqdeMacBook-Pro:33 xfq$ git branch</span><br><span class="line">  dev</span><br><span class="line">* master</span><br><span class="line">xfqdeMacBook-Pro:33 xfq$</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>岁月不饶人，我亦未曾放过岁月</strong>
+      <!--<a href="http://my.com/2019/11/09/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="git常用命令" target="_blank" rel="external">http://my.com/2019/11/09/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</a>-->
+    </li>
+    
+    <li class="post-copyright-license">
+      <!--<strong> </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！-->
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://git.coding.net/Xiaowuqing/Xiaowuqing.git" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://git.coding.net/Xiaowuqing/Xiaowuqing.git" target="_blank"><span class="text-dark">肖</span><small class="ml-1x">傻瓜 &amp; 编程</small></a></h3>
+        <div>比你优秀的人，却比你更努力。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2019/11/09/git%E5%B8%B8%E7%94%A8%E5%9C%BA%E6%99%AF/" title="git常用命令"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <!--<footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>-->
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
